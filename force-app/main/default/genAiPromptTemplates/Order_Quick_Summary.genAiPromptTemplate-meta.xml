@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>4</activeVersion>
+    <developerName>Order_Quick_Summary</developerName>
+    <masterLabel>Order Quick Summary</masterLabel>
+    <relatedEntity>OrderSummary</relatedEntity>
+    <relatedField>OrderSummary.Order_Quick_Summary__c</relatedField>
+    <templateVersions>
+        <content>Summarize the concatenation of Order Number which is #{!$Input:OrderSummary.Order_Number__c} along with Order Date which is {!$Input:OrderSummary.OrderedDate}, Number of Ordered Products from {!$Input:OrderSummary.Order_Product_Summaries__c}, the Order Status which is {!$Input:OrderSummary.Status} and Order Total which is ${!$Input:OrderSummary.GrandTotalAmount}.
+Keep the response to a single short paragraph.
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://OrderSummary</definition>
+            <referenceName>Input:OrderSummary</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>Summarize the concatenation of Order Number which is #{!$Input:OrderSummary.Order_Number__c} along with Order Date which is {!$Input:OrderSummary.OrderedDate}, Number of Ordered Products from {!$Input:OrderSummary.Order_Product_Summaries__c}, the Order Status which is {!$Input:OrderSummary.Status}, Order Total which is ${!$Input:OrderSummary.GrandTotalAmount} and Fulfillment Orders from {!$RelatedList:OrderSummary.FulfillmentOrders.Records}.
+Keep the response to a single short paragraph.
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://OrderSummary</definition>
+            <referenceName>Input:OrderSummary</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:OrderSummary.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>FulfillmentOrders</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:OrderSummary.FulfillmentOrders.Records</referenceName>
+        </templateDataProviders>
+        <versionNumber>2</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>Summarize the concatenation of Order Number which is #{!$Input:OrderSummary.Order_Number__c} along with Order Date which is {!$Input:OrderSummary.OrderedDate}, Number of Ordered Products from {!$Input:OrderSummary.Order_Product_Summaries__c}, the Order Status which is {!$Input:OrderSummary.Status}, Order Total which is ${!$Input:OrderSummary.GrandTotalAmount} and Fulfillment Orders from {$RelatedList:OrderSummary.FulfillmentOrders.FulfilledToState}
+Keep the response to a single short paragraph.
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://OrderSummary</definition>
+            <referenceName>Input:OrderSummary</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Draft</status>
+        <versionNumber>3</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>Summarize the concatenation of Order Number which is #{!$Input:OrderSummary.Order_Number__c} along with Order Date which is {!$Input:OrderSummary.OrderedDate}, Number of Ordered Products from {!$Input:OrderSummary.Order_Product_Summaries__c}, the Order Status which is {!$Input:OrderSummary.Status}, Order Total which is ${!$Input:OrderSummary.GrandTotalAmount} and Shipping Address which is {!$RelatedList:OrderSummary.OrderDeliveryGroupSummaries.Records}.
+Keep the response to a single short paragraph.
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://OrderSummary</definition>
+            <referenceName>Input:OrderSummary</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:OrderSummary.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OrderDeliveryGroupSummaries</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:OrderSummary.OrderDeliveryGroupSummaries.Records</referenceName>
+        </templateDataProviders>
+        <versionNumber>4</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
