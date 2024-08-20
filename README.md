@@ -23,8 +23,8 @@
     ![AI Moment #2 Shipping Policy Verification](README-Images/4.png)
     ![AI Moment #3 Policy Violation Alert](README-Images/5.png)
 # Installation instructions
-1. Clone the [Repo](TBD) to get the metadata for the solution of the use case
-    - git clone https://github.com/abc/xyz.git
+1. Clone the [Repo](https://github.com/mbsf2022/EmbeddedAI.git) to get the metadata for the solution of the use case
+    - git clone https://github.com/mbsf2022/EmbeddedAI.git
 2. In Visual Studio Code, OPEN the folder xyz
 3. In Visual Studio Code, AUTHENTICATE to SDO Org
     - Open Command Palette or press Ctrl + Shift + P, then Select “SFDX: Authorize an Org“ and finally select Project Default and Allow Access
