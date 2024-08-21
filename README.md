@@ -1,19 +1,28 @@
-# Embedded AI Use Case
+# Table of Contents
+
+- [Embedded AI Use Case](#embedded-ai-use-case)
+- [Solution Overview](#solution-overview)
+- [Installation Prerequisites ](#prerequisites)
+- [Installation Instructions](#installation-instructions)
+- [Usage Instructions](#usage-instructions)
+- [Additional Resources](#additional-resources)
+
+## Embedded AI Use Case
 
 <img src="./README-Images/2.png" alt="what is embedded AI" width=500>
 <img src="./README-Images/1.png" alt="Use case description, Commerce Case agent's workflow to be embedded with a series of Generative-AI moments by generating a quick summary of the order, performing a shipping policy verification, and rasing a Policy Violation Alert to appropriate team." width=500>
 
-## Table of Contents
+## Solution Overview
 
-- [Embedded AI Use Case](#embedded-ai-use-case)
-  - [Table of Contents](#table-of-contents)
-  - [Prerequisites](#prerequisites)
-  - [Solution Overview](#solution-overview)
-  - [Installation instructions](#installation-instructions)
-  - [Usage instructions](#usage-instructions)
-  - [Additional Resources](#additional-resources)
+[![Watch the demo of the Solution](./README-Images/videoThumbnail.png)](https://salesforce.vidyard.com/watch/h9n8v29iAvH6mXp1C85RK4?)
 
-## Prerequisites
+### Solution Technical Approach
+
+   -  <img src="./README-Images/3.png" width=500>
+   -  <img src="./README-Images/4.png" width=500>
+   -  <img src="./README-Images/5.png" width=500>
+
+## Installation Prerequisites
 
 1. Visit [Partner Community for AI & Einstein Partners](https://partners.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F94V000000g5m5&fromEmail=1) to obtain the AI|SDO Pocket Guide from information section on left
     - Get a [Demo Org (SDO) for Partners](https://salesforce.quip.com/4m1gAiNB4O5I#temp:C:abXe66becdc9c4e44baa4491c352)
@@ -27,18 +36,7 @@
     - Install [Git](https://git-scm.com/downloads)
     - Install [Salesforce Extension for Visual Studio Code](https://developer.salesforce.com/docs/platform/sfvscode-extensions/guide)
 
-## Solution Overview
-
-_Video opens a new browser tab_
-
-[![Watch the demo of the Solution](./README-Images/videoThumbnail.png)](https://salesforce.vidyard.com/watch/h9n8v29iAvH6mXp1C85RK4?)
-
-- Solution Technical Approach
-   -  <img src="./README-Images/3.png" width=500>
-   -  <img src="./README-Images/4.png" width=500>
-   -  <img src="./README-Images/5.png" width=500>
-
-## Installation instructions
+## Installation Instructions
 
 1. Clone the repo `git clone git@github.com:mbsf2022/EmbeddedAI.git`
 2. In Visual Studio Code, OPEN the folder EmbeddedAI
